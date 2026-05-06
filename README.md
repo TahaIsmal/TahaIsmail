@@ -16,3 +16,80 @@ AI Engineer working across Artificial Intelligence, Machine Learning, and AI Aut
 [![](https://visitcount.itsvg.in/api?id=TahaIsmail&icon=0&color=0)](https://visitcount.itsvg.in)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+
+
+
+# 🎓 University App - UI Development Phase
+
+A robust, scalable mobile application built with **Flutter** following the **Clean Architecture** principles. This project serves as a comprehensive digital portal for university students, enabling them to explore academic programs, engage with the community, and manage their profiles efficiently.
+
+---
+
+## 🏗 Project Structure
+The project is organized into modular layers to ensure separation of concerns and ease of collaboration:
+```text
+lib/
+├── main.dart                 # Application entry point
+├── bootstrap.dart            # Initialization logic
+├── app/                      # Global App Configuration
+│   ├── routes/               # Navigation & Routing system
+│   ├── di/                   # Dependency Injection (Get_it)
+│   ├── theme/                # Design System (Colors, Typography, Spacing)
+│   └── config/               # API & Environment configurations
+├── core/                     # Core Shared Logic
+│   ├── error/                # Exception & Failure handling
+│   ├── network/              # Dio Client & API wrappers
+│   ├── utils/                # Helper functions & Validators
+│   ├── services/             # Local & External services (Storage, Analytics)
+│   └── widgets/              # Global reusable UI components
+├── features/                 # Modular Business Features
+│   ├── auth/                 # Authentication & User Identity
+│   ├── university/           # University Search & Discovery
+│   ├── community/            # Social Feed & Engagement
+│   ├── news/                 # Academic Updates
+│   ├── programs/             # Educational Tracks
+│   ├── profile/              # User Management
+│   ├── chatbot/              # AI Assistant
+│   └── comparison/           # University Comparison tools
+├── shared/                   # Cross-feature shared models & widgets
+└── assets/                   # Images, Icons, Fonts, and Animations
+
+---
+
+## 👥 Development Teams & Task Distribution
+
+To ensure smooth collaboration and avoid merge conflicts, the UI work is divided into two main tracks:
+
+### 🚀 Developer A: Authentication & Profile Journey
+**Focus:** User onboarding, security UI, and global design system.
+- **Auth Module:** Welcome, Login, Signup, OTP Verification, and Reset Password screens.
+- **Profile Module:** Student profile dashboard, settings, and edit profile UI.
+- **Global Widgets:** Implementation of `CustomButton`, `CustomTextField`, and `AppBars` in `core/widgets/`.
+- **Navigation:** Setting up the `BottomNavigationBar` and Route transitions.
+
+### 🎨 Developer B: Content, Community & Utilities
+**Focus:** Discovery, social interaction, and specialized features.
+- **University & Programs:** Discovery feed, advanced filters, and detailed University/Program info pages.
+- **Community Module:** News feed, post cards, comments section, and "Create Post" interface.
+- **News Module:** University news listing and article view.
+- **Special Features:** Chatbot interface and University comparison tables.
+
+---
+
+## 🛠 UI Coding Standards
+To maintain a consistent Look & Feel, please follow these rules:
+1. **Theme First:** Never hardcode colors or font sizes. Always use:
+   - Colors: `AppColors.primary`, etc., from `app/theme/colors.dart`.
+   - Typography: Use defined styles from `app/theme/typography.dart`.
+2. **Reusability:** If a widget (like a card or a header) is used in more than one feature, move it to `shared/widgets/`.
+3. **Responsiveness:** Use the spacing constants from `app/theme/spacing.dart` to ensure consistency across different screen sizes.
+4. **Assets:** Place all images in `assets/images/` and icons in `assets/icons/`. Ensure they are declared in `pubspec.yaml`.
+
+---
+
+## 🚦 Git Workflow & Collaboration
+- **Branching:** Create a branch for each task: `ui/auth-screens` or `ui/community-feed`.
+- **Pull Requests:** Before merging to `main`, a PR must be opened and reviewed by the team lead.
+- **Sync:** Run `flutter pub get` frequently to stay updated with any new packages added by your teammate.
+
+---
